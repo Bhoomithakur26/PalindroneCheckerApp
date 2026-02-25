@@ -45,7 +45,7 @@ System.out.println ("Welcome to the Palindrome Checker management system");
                         System.out.println(original + " is not a Palindrome.");
                     }
                 }
-            }
+
 UseCase4PalindromeCheckerApp {
 
                 public static void main(String[] args) {
@@ -66,11 +66,12 @@ UseCase4PalindromeCheckerApp {
                     System.out.println("Is Palindrome? : " + isPalindrome);
                 }
             }
-        }
+
         public class UseCase5PalindromeCheckerApp {
 
             /**
              * Application entry point for UC5.
+             *
              * @param args Command-line arguments
              */
             public static void main(String[] args) {
@@ -101,6 +102,7 @@ UseCase4PalindromeCheckerApp {
                 System.out.println("Input : " + input);
                 System.out.println("Is Palindrome? : " + isPalindrome);
             }
+        }
             public class UseCase6PalindromeCheckerApp {
 
                 /**
@@ -134,8 +136,6 @@ UseCase4PalindromeCheckerApp {
                             break;
                         }
                     }
-
-                    // Display result
                     System.out.println("Input : " + input);
                     System.out.println("Is Palindrome? : " + isPalindrome);
                 }
@@ -236,12 +236,10 @@ UseCase4PalindromeCheckerApp {
                  */
                 private static boolean check(String s, int start, int end) {
 
-                    // Base condition: If pointers cross, it's a palindrome
                     if (start >= end) {
                         return true;
                     }
 
-                    // If mismatch found
                     if (s.charAt(start) != s.charAt(end)) {
                         return false;
                     }
@@ -276,11 +274,59 @@ UseCase4PalindromeCheckerApp {
                             break;
                         }
                     }
-
-                    // Display result
                     System.out.println("Input : " + input);
                     System.out.println("Normalized : " + normalized);
                     System.out.println("Is Palindrome? : " + isPalindrome);
+                }
+            }
+            public class UseCase11PalindromeCheckerApp {
+
+                /**
+                 * Application entry point for UC11.
+                 * @param args Command-line arguments
+                 */
+                public static void main(String[] args) {
+
+                    String input = "racecar";
+
+                    // Create service object
+                    PalindromeService service = new PalindromeService();
+
+                    // Call encapsulated method
+                    boolean result = service.checkPalindrome(input);
+
+                    System.out.println("Input : " + input);
+                    System.out.println("Is Palindrome? : " + result);
+                }
+            }
+
+            /**
+             * Service class that contains palindrome logic.
+             */
+            class PalindromeService {
+
+                /**
+                 * Checks whether the input string is a palindrome.
+                 *
+                 * @param input Input string
+                 * @return true if palindrome, false otherwise
+                 */
+                public boolean checkPalindrome(String input) {
+
+                    int start = 0;
+                    int end = input.length() - 1;
+
+                    while (start < end) {
+
+                        if (input.charAt(start) != input.charAt(end)) {
+                            return false;
+                        }
+
+                        start++;
+                        end--;
+                    }
+
+                    return true;
                 }
             }
         }
