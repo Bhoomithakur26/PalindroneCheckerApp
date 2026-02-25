@@ -175,6 +175,41 @@ UseCase4PalindromeCheckerApp {
                     System.out.println("Is Palindrome? : " + isPalindrome);
                 }
             }
+            public class UseCase8PalindromeCheckerApp {
+
+                /**
+                 * Application entry point for UC8.
+                 * @param args Command-line arguments
+                 */
+                public static void main(String[] args) {
+
+                    // Define input string
+                    String input = "level";
+
+                    // Create a LinkedList to store characters
+                    LinkedList<Character> list = new LinkedList<>();
+
+                    // Add each character to the LinkedList
+                    for (char c : input.toCharArray()) {
+                        list.add(c);
+                    }
+
+                    // Flag to track palindrome state
+                    boolean isPalindrome = true;
+
+                    // Compare until only one or zero elements remain
+                    while (list.size() > 1) {
+                        if (!list.removeFirst().equals(list.removeLast())) {
+                            isPalindrome = false;
+                            break;
+                        }
+                    }
+
+                    // Display result
+                    System.out.println("Input : " + input);
+                    System.out.println("Is Palindrome? : " + isPalindrome);
+                }
+            }
         }
 
 
