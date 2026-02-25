@@ -1,6 +1,7 @@
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
 System.out.println ("Welcome to the Palindrome Checker management system");
+        System.out.println ("Modify this logic to usecase 2");
         System.out.println ("Version : 1.0");
         System.out.println ("System initialized Successfully");
         public class UseCase2PalindromeCheckerApp
